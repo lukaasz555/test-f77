@@ -22,12 +22,19 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={poppins.className}>
-				<TopBar />
 				<Container
+					className='flex flex-col gap-5 px-0 mx-auto'
 					maxWidth='xl'
-					component='main'
-					style={{ border: '1px solid yellow' }}>
-					{children}
+					disableGutters>
+					<TopBar />
+					<Container
+						component='main'
+						disableGutters
+						className='w-full'
+						maxWidth='xl'
+						style={{ border: '1px solid yellow' }}>
+						{children}
+					</Container>
 				</Container>
 			</body>
 		</html>
