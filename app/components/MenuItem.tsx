@@ -28,19 +28,21 @@ export const MenuItem = ({ id, name, subcategoriesIds }: Props) => {
 			onMouseEnter={() => setIsMouseOver(true)}
 			onMouseLeave={() => setIsMouseOver(false)}>
 			<p className='uppercase tracking-wide text-background'>{name}</p>
-			<div className='ml-1'>
-				<SlArrowDown
-					className={clsx(
-						isMouseOver ? 'rotate-180' : 'rotate-0',
-						'transition-transform duration-300'
-					)}
-					style={{ fontSize: '12px' }}
-				/>
-			</div>
+			{subcategories.length ? (
+				<div className='ml-1'>
+					<SlArrowDown
+						className={clsx(
+							isMouseOver ? 'rotate-180' : 'rotate-0',
+							'transition-transform duration-300'
+						)}
+						style={{ fontSize: '12px' }}
+					/>
+				</div>
+			) : null}
 			<div
 				className={clsx(
 					'absolute left-0 top-[100%] bg-background border-[1px] border-border py-2 rounded-sm transition-all duration-150',
-					isMouseOver
+					isMouseOver && subcategories.length
 						? 'opacity-100 translate-y-0'
 						: 'opacity-0 translate-y-2 pointer-events-none'
 				)}>

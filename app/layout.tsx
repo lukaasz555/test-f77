@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Nunito, Poppins } from 'next/font/google';
 import { TopBar } from './components/TopBar';
 import { Container } from '@mui/material';
+import { Footer } from './components/Footer';
 import './globals.css';
 
 const poppins = Poppins({
@@ -43,10 +44,10 @@ export default function RootLayout({
 						component='main'
 						disableGutters
 						className='w-full'
-						maxWidth='xl'
-						style={{ border: '1px solid yellow' }}>
+						maxWidth='xl'>
 						{children}
 					</Container>
+					<Footer />
 				</Container>
 			</body>
 		</html>
