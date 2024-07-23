@@ -36,7 +36,7 @@ export default function RootLayout({
 			</head>
 			<body className='relative'>
 				<Container
-					className='flex flex-col gap-5 px-0 mx-auto'
+					className='flex flex-col gap-5 px-0 mx-auto overflow-hidden'
 					maxWidth='xl'
 					disableGutters>
 					<TopBar />

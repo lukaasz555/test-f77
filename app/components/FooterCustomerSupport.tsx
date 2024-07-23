@@ -1,6 +1,8 @@
 export const FooterCustomerSupport = () => {
 	return (
-		<div className='flex flex-col gap-2' style={{ maxWidth: '300px' }}>
+		<div
+			className='flex flex-col gap-2'
+			style={{ maxWidth: '300px', minWidth: '220px' }}>
 			<div>
 				<p className='font-heading uppercase text-header text-xs tracking-widest'>
 					customer support

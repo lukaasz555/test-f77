@@ -7,7 +7,7 @@ export const TopBar = () => {
 	return (
 		<AppBar
 			position='static'
-			className='bg-primary'
+			className='bg-primary overflow-hidden'
 			style={{ height: '100px' }}>
 			<Container
 				maxWidth='xl'
