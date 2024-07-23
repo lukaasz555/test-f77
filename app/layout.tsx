@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Nunito, Poppins } from 'next/font/google';
-import { TopBar } from './components/TopBar/TopBar';
+import { TopBar } from './components/TopBar';
 import { Container } from '@mui/material';
 import './globals.css';
 
@@ -33,7 +33,7 @@ export default function RootLayout({
 				<meta name='theme-color' content='#57886C' />
 				<meta name='keywords' content='77store, 77-store.net'></meta>
 			</head>
-			<body>
+			<body className='relative'>
 				<Container
 					className='flex flex-col gap-5 px-0 mx-auto'
 					maxWidth='xl'

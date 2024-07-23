@@ -1,6 +1,7 @@
 'use client';
 import { Container, Toolbar, Typography } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
+import { Menu } from './Menu';
 
 export const TopBar = () => {
 	return (
@@ -13,7 +14,7 @@ export const TopBar = () => {
 				className='flex items-center justify-between h-full px-4'>
 				<Toolbar disableGutters className='flex justify-between w-full'>
 					<div className='left'>
-						<div>MENU</div>
+						<Menu />
 					</div>
 
 					<div className='center '>

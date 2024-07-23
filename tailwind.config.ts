@@ -15,6 +15,7 @@ const config: Config = {
 				border: '#D9D9D9',
 				error: '#FF312E',
 				background: '#F9F9F9',
+				lightGray: '#f1f1f1',
 				warning: '', // TODO
 				success: '', // TODO - maybe primary?
 				info: '', // TODO
