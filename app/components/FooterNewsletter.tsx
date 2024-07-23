@@ -1,4 +1,11 @@
+'use client';
+import { Button } from './Button';
+
 export const FooterNewsletter = () => {
+	const handleSubscribe = () => {
+		alert('Subscribed!');
+	};
+
 	return (
 		<div
 			className='flex flex-col gap-2'
@@ -18,7 +25,11 @@ export const FooterNewsletter = () => {
 			</div>
 
 			<div>
-				<button>subscribe</button>
+				<Button
+					buttonText='Subscribe'
+					buttonAlign='left'
+					onClick={handleSubscribe}
+				/>
 			</div>
 		</div>
 	);
