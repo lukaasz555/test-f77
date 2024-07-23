@@ -1,21 +1,31 @@
 'use client';
 import { Container, Toolbar, Typography } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 
 export const TopBar = () => {
 	return (
 		<AppBar
 			position='static'
-			className='rounded-none  xl:rounded-bl-xl xl:rounded-br-xl'>
-			<Container style={{ paddingInline: '0' }} maxWidth='xl'>
-				<Toolbar disableGutters className='flex justify-between'>
-					<Box className='flex'>
-						<Typography variant='h1'>77Store</Typography>
-						<Box>nav?</Box>
-					</Box>
+			className='bg-primary'
+			style={{ height: '100px' }}>
+			<Container
+				maxWidth='xl'
+				className='flex items-center justify-between h-full px-4'>
+				<Toolbar disableGutters className='flex justify-between w-full'>
+					<div className='left'>
+						<div>MENU</div>
+					</div>
 
-					<Box>Account/Login</Box>
+					<div className='center '>
+						<h1 className='text-background'>
+							<a href='/'>77store</a>
+						</h1>
+					</div>
+
+					<div className='right flex items-center gap-5'>
+						<div>Account Details</div>
+						<div>ShoppingCart</div>
+					</div>
 				</Toolbar>
 			</Container>
 		</AppBar>
