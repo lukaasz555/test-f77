@@ -8,26 +8,54 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
-			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-conic':
-					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+			colors: {
+				primary: '#57886C',
+				header: '#141414',
+				text: '#3F3C3C',
+				border: '#D9D9D9',
+				error: '#FF312E',
+				background: '#F9F9F9',
+				warning: '', // TODO
+				success: '', // TODO - maybe primary?
+				info: '', // TODO
 			},
-		},
-		borderRadius: {
-			sm: '0.125rem',
-			md: '0.375rem',
-			lg: '0.5rem',
-			xl: '0.75rem',
-			'2xl': '1rem',
-			none: '0',
-		},
-		screens: {
-			xs: '0px',
-			sm: '600px',
-			md: '900px',
-			lg: '1200px',
-			xl: '1536px',
+			fontFamily: {
+				heading: ['Poppins', 'sans-serif'],
+				body: ['Nunito', 'sans-serif'],
+			},
+			fontSize: {
+				'2xs': '0.563rem', // 9px
+				'1xs': '0.688rem', // 11px
+				xs: '0.75rem', // 12px
+				'2sm': '0.813rem', // 13px
+				sm: '0.875rem', // 14px
+				base: '1rem', // 16px
+				lg: '1.125rem', // 18px
+				xl: '1.5rem', // 24px
+				'2xl': '1.75rem', // 28px
+			},
+			letterSpacing: {
+				normal: '0',
+				wide: '0.05em',
+				wider: '0.1em',
+				widest: '0.15em',
+			},
+			borderRadius: {
+				none: '0',
+				sm: '4px',
+				md: '8px',
+				lg: '12px',
+				xl: '15px',
+				'2xl': '25px',
+				rounded: '50%',
+			},
+			screens: {
+				sm: '640px',
+				md: '768px',
+				lg: '1024px',
+				xl: '1280px',
+				'2xl': '1536px',
+			},
 		},
 	},
 	plugins: [],
