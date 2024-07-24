@@ -31,7 +31,7 @@ export const Button = (props: Props) => {
 			)}>
 			<button
 				className={clsx(
-					'bg-primary  px-6 py-2 text-center uppercase text-2sm font-medium text-background tracking-wider transition-all duration-300 border-[1px] border-primary',
+					'bg-primary  px-6 py-2 text-center uppercase text-2sm font-medium text-background tracking-wider transition-all duration-300 border-2 border-primary',
 					'hover:bg-background hover:text-header'
 				)}
 				disabled={rest.disabled}

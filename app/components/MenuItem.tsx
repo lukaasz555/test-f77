@@ -23,7 +23,7 @@ export const MenuItem = ({ id, name, subcategoriesIds }: Props) => {
 
 	return (
 		<div
-			className='mx-2 px-2 cursor-pointer relative flex items-center'
+			className='mx-2 px-2 cursor-pointer flex items-center relative'
 			onClick={handleClick}
 			onMouseEnter={() => setIsMouseOver(true)}
 			onMouseLeave={() => setIsMouseOver(false)}>
@@ -41,7 +41,7 @@ export const MenuItem = ({ id, name, subcategoriesIds }: Props) => {
 			) : null}
 			<div
 				className={clsx(
-					'absolute left-0 top-[100%] bg-background border-[1px] border-border py-2 rounded-sm transition-all duration-150',
+					'absolute left-0 top-[100%] bg-background border-1 border-border py-2 rounded-sm transition-all duration-150',
 					isMouseOver && subcategories.length
 						? 'opacity-100 translate-y-0'
 						: 'opacity-0 translate-y-2 pointer-events-none'

@@ -5,7 +5,7 @@ export const Menu = () => {
 	const rootCategories = mockCategories.filter((c) => !c.parentCategoryId);
 
 	return (
-		<div className='flex'>
+		<div className='hidden lg:flex'>
 			{rootCategories.map(({ id, name, subcategoriesIds }) => (
 				<MenuItem
 					key={id}
