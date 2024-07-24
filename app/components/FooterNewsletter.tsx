@@ -28,6 +28,7 @@ export const FooterNewsletter = () => {
 				<Button
 					buttonText='Subscribe'
 					buttonAlign='left'
+					animateOnHover
 					onClick={handleSubscribe}
 				/>
 			</div>

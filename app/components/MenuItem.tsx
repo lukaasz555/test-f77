@@ -2,7 +2,8 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { mockCategories } from '../data/mockCategories';
-import { SlArrowDown } from 'react-icons/sl';
+import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+
 import clsx from 'clsx';
 
 type Props = {
@@ -30,18 +31,18 @@ export const MenuItem = ({ id, name, subcategoriesIds }: Props) => {
 			<p className='uppercase tracking-wide text-background'>{name}</p>
 			{subcategories.length ? (
 				<div className='ml-1'>
-					<SlArrowDown
+					<MdOutlineKeyboardArrowDown
 						className={clsx(
 							isMouseOver ? 'rotate-180' : 'rotate-0',
 							'transition-transform duration-300'
 						)}
-						style={{ fontSize: '12px' }}
+						style={{ fontSize: 20 }}
 					/>
 				</div>
 			) : null}
 			<div
 				className={clsx(
-					'absolute left-0 top-[100%] bg-background border-1 border-border py-2 rounded-sm transition-all duration-150',
+					'absolute left-0 top-[100%] bg-background border-1 border-border py-2 rounded-sm transition-all duration-150 z-30',
 					isMouseOver && subcategories.length
 						? 'opacity-100 translate-y-0'
 						: 'opacity-0 translate-y-2 pointer-events-none'

@@ -16,7 +16,7 @@ export const Slider = () => {
 				backgroundImage: `url(${slider2.src})`,
 				backgroundPosition: 'center',
 			}}>
-			<div className='w-11/12 self-end'>
+			<div className='w-11/12 self-end flex flex-col items-center md:items-start'>
 				<h3>SUMMER SALE</h3>
 				<Button buttonText='EXPLORE' buttonAlign='left' showArrowRight />
 			</div>
