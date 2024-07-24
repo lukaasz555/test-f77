@@ -9,8 +9,10 @@ export const FooterInformation = () => {
 				</p>
 			</div>
 
-			<div className='flex flex-col gap-1'>
-				<a href='/about' className='text-text text-sm hover:underline'>
+			<div className='flex flex-col items-start gap-1'>
+				<a
+					href='/about'
+					className='text-text text-sm hover:underline text-left'>
 					About us
 				</a>
 				<a href='/refunds' className='text-text text-sm hover:underline'>

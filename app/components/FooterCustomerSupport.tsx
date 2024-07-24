@@ -9,7 +9,7 @@ export const FooterCustomerSupport = () => {
 				</p>
 			</div>
 
-			<div className='flex flex-col gap-1'>
+			<div className='flex flex-col items-start gap-1'>
 				<a href='/help' className='text-text text-sm hover:underline'>
 					Help Center
 				</a>

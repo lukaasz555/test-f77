@@ -16,12 +16,12 @@ export const TopBar = () => {
 				maxWidth='xl'
 				className='flex items-center justify-between h-full px-4'>
 				<Toolbar disableGutters className='flex justify-between w-full'>
-					<aside style={{ width: '300px' }}>
+					<aside style={{ width: '30%' }}>
 						<Menu />
 						<MobileMenu />
 					</aside>
 
-					<div className='center '>
+					<div className='flex justify-center' style={{ width: '40%' }}>
 						<h1 className='text-background'>
 							<a href='/'>77store</a>
 						</h1>
@@ -29,7 +29,7 @@ export const TopBar = () => {
 
 					<aside
 						className='flex items-center justify-end gap-5'
-						style={{ width: '300px' }}>
+						style={{ width: '30%' }}>
 						<UserButton />
 						<CartButton />
 					</aside>
