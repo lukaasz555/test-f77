@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, useState } from 'react';
+import { InputHTMLAttributes, useId, useState } from 'react';
 import clsx from 'clsx';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
@@ -20,7 +20,7 @@ export const Input = ({
 }: Props) => {
 	const [isFocused, setFocused] = useState(false);
 
-	const inputId = `input-${Date.now()}`;
+	const inputId = useId();
 	const isShrinkLabel = isFocused || value;
 
 	const handleFocus = () => setFocused(true);
