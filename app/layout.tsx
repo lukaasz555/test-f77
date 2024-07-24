@@ -34,7 +34,7 @@ export default function RootLayout({
 				<meta name='theme-color' content='#57886C' />
 				<meta name='keywords' content='77store, 77-store.net'></meta>
 			</head>
-			<body className='relative'>
+			<body className='relative bg-background'>
 				<Container
 					className='flex flex-col gap-5 px-0 mx-auto overflow-hidden'
 					maxWidth='xl'

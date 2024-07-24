@@ -1,7 +1,11 @@
 'use client';
+import { useState } from 'react';
 import { Button } from './Button';
+import { Input } from './Input';
 
 export const FooterNewsletter = () => {
+	const [email, setEmail] = useState('');
+
 	const handleSubscribe = () => {
 		alert('Subscribed!');
 	};
@@ -18,10 +22,13 @@ export const FooterNewsletter = () => {
 
 			<div>
 				<p>Become a member and receive 15% off for your first order.</p>
-				<label>
-					E-mail
-					<input type='text' style={{ border: '1px solid blue' }} />
-				</label>
+				<Input
+					name={email}
+					value={email}
+					label='E-mail'
+					disabled
+					onChange={(e) => setEmail(e.target.value)}
+				/>
 			</div>
 
 			<div>

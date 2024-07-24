@@ -11,6 +11,7 @@ const config: Config = {
 			colors: {
 				primary: '#57886C',
 				header: '#141414',
+				black: '#141414',
 				text: '#3F3C3C',
 				border: '#D9D9D9',
 				error: '#FF312E',
