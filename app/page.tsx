@@ -1,13 +1,10 @@
 import Image from 'next/image';
+import { Slider } from './components/Slider';
 
 export default function Page() {
 	return (
 		<div className='flex flex-col gap-10'>
-			<div
-				className='flex justify-center items-center'
-				style={{ height: '400px', backgroundColor: '#F1F1F1' }}>
-				SLIDER PLACEHOLDER
-			</div>
+			<Slider />
 
 			<div
 				className='flex justify-center items-center'
