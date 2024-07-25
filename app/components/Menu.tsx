@@ -1,12 +1,14 @@
 import { MenuItem } from './MenuItem';
-import { mockCategories } from '../data/mockCategories';
+import { Category } from '../data/mockCategories';
 
-export const Menu = () => {
-	const rootCategories = mockCategories.filter((c) => !c.parentCategoryId);
+type Props = {
+	categories: Category[];
+};
 
+export const Menu = ({ categories }: Props) => {
 	return (
 		<div className='hidden lg:flex'>
-			{rootCategories.map(({ id, name, subcategoriesIds }) => (
+			{categories.map(({ id, name, subcategoriesIds }) => (
 				<MenuItem
 					key={id}
 					id={id}

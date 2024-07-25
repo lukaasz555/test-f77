@@ -1,6 +1,11 @@
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { Category } from '../data/mockCategories';
 
-export const MobileMenu = () => {
+type Props = {
+	categories: Category[];
+};
+
+export const MobileMenu = ({ categories }: Props) => {
 	return (
 		<div className='lg:hidden'>
 			<button>
