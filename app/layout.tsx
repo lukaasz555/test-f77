@@ -4,6 +4,7 @@ import { TopBar } from './components/TopBar';
 import { Container } from '@mui/material';
 import { Footer } from './components/Footer';
 import './globals.css';
+import { ThemeProviderWrapper } from './theme/ThemeProviderWrapper';
 
 const poppins = Poppins({
 	weight: ['400', '500', '600', '700', '800'],
@@ -35,20 +36,22 @@ export default function RootLayout({
 				<meta name='keywords' content='77store, 77-store.net'></meta>
 			</head>
 			<body className='relative bg-background'>
-				<Container
-					className='flex flex-col gap-5 px-0 mx-auto overflow-hidden'
-					maxWidth='xl'
-					disableGutters>
-					<TopBar />
+				<ThemeProviderWrapper>
 					<Container
-						component='main'
-						disableGutters
-						className='w-full'
-						maxWidth='xl'>
-						{children}
+						className='flex flex-col gap-5 px-0 mx-auto overflow-hidden'
+						maxWidth='xl'
+						disableGutters>
+						<TopBar />
+						<Container
+							component='main'
+							disableGutters
+							className='w-full'
+							maxWidth='xl'>
+							{children}
+						</Container>
+						<Footer />
 					</Container>
-					<Footer />
-				</Container>
+				</ThemeProviderWrapper>
 			</body>
 		</html>
 	);

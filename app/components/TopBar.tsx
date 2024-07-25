@@ -8,10 +8,7 @@ import { MobileMenu } from './MobileMenu';
 
 export const TopBar = () => {
 	return (
-		<AppBar
-			position='static'
-			className='bg-primary'
-			style={{ height: '100px' }}>
+		<AppBar position='static' color='primary' style={{ height: '100px' }}>
 			<Container
 				maxWidth='xl'
 				className='flex items-center justify-between h-full px-4'>

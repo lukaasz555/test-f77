@@ -7,7 +7,7 @@ export const FooterNewsletter = () => {
 	const [email, setEmail] = useState('');
 
 	const handleSubscribe = () => {
-		alert('Subscribed!');
+		alert(`${email} - subscribed!`);
 	};
 
 	return (
@@ -26,7 +26,6 @@ export const FooterNewsletter = () => {
 					name={email}
 					value={email}
 					label='E-mail'
-					disabled
 					onChange={(e) => setEmail(e.target.value)}
 				/>
 			</div>
