@@ -7,6 +7,7 @@ import { ThemeProviderWrapper } from './theme/ThemeProviderWrapper';
 import { SidebarProvider, useSidebar } from '@/contexts/SidebarContext';
 import { Sidebar } from './components/Sidebar';
 import './globals.css';
+import { notFound } from 'next/navigation';
 
 const poppins = Poppins({
 	weight: ['400', '500', '600', '700', '800'],
@@ -28,6 +29,10 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	if (!metadata.description) {
+		throw notFound();
+	}
+
 	return (
 		<html lang='en'>
 			<head>
@@ -49,7 +54,7 @@ export default function RootLayout({
 							<Container
 								component='main'
 								disableGutters
-								className='w-full'
+								className='w-full h-full min-h-[50vh] flex items-center'
 								maxWidth='xl'>
 								{children}
 							</Container>
