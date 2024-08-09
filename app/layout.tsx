@@ -3,8 +3,10 @@ import { Nunito, Poppins } from 'next/font/google';
 import { TopBar } from './components/TopBar';
 import { Container } from '@mui/material';
 import { Footer } from './components/Footer';
-import './globals.css';
 import { ThemeProviderWrapper } from './theme/ThemeProviderWrapper';
+import { SidebarProvider, useSidebar } from '@/contexts/SidebarContext';
+import { Sidebar } from './components/Sidebar';
+import './globals.css';
 
 const poppins = Poppins({
 	weight: ['400', '500', '600', '700', '800'],
@@ -37,20 +39,23 @@ export default function RootLayout({
 			</head>
 			<body className='relative bg-background'>
 				<ThemeProviderWrapper>
-					<Container
-						className='flex flex-col gap-5 px-0 mx-auto overflow-hidden'
-						maxWidth='xl'
-						disableGutters>
-						<TopBar />
+					<SidebarProvider>
 						<Container
-							component='main'
-							disableGutters
-							className='w-full'
-							maxWidth='xl'>
-							{children}
+							className='flex flex-col gap-5 px-0 mx-auto overflow-hidden'
+							maxWidth='xl'
+							disableGutters>
+							<TopBar />
+							<Sidebar />
+							<Container
+								component='main'
+								disableGutters
+								className='w-full'
+								maxWidth='xl'>
+								{children}
+							</Container>
+							<Footer />
 						</Container>
-						<Footer />
-					</Container>
+					</SidebarProvider>
 				</ThemeProviderWrapper>
 			</body>
 		</html>
