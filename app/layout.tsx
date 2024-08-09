@@ -54,7 +54,7 @@ export default function RootLayout({
 							<Container
 								component='main'
 								disableGutters
-								className='w-full h-full min-h-[50vh] flex items-center'
+								className='w-full h-full min-h-[50vh] flex flex-col items-center justify-center'
 								maxWidth='xl'>
 								{children}
 							</Container>

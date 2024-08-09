@@ -14,7 +14,7 @@ export default function Page() {
 	}, []);
 
 	return (
-		<div className='flex flex-col gap-10'>
+		<div className='flex flex-col gap-10 w-full'>
 			<Slider />
 			<div
 				className='flex justify-center items-center'
