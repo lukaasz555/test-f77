@@ -8,6 +8,8 @@ import { SidebarProvider, useSidebar } from '@/contexts/SidebarContext';
 import { Sidebar } from './components/Sidebar';
 import './globals.css';
 import { notFound } from 'next/navigation';
+import { ModalProvider } from '@/contexts/ModalContext';
+import Modal from './components/Modal';
 
 const poppins = Poppins({
 	weight: ['400', '500', '600', '700', '800'],
@@ -45,21 +47,25 @@ export default function RootLayout({
 			<body className='relative bg-background'>
 				<ThemeProviderWrapper>
 					<SidebarProvider>
-						<Container
-							className='flex flex-col gap-5 px-0 mx-auto overflow-hidden'
-							maxWidth='xl'
-							disableGutters>
-							<TopBar />
-							<Sidebar />
+						<ModalProvider>
 							<Container
-								component='main'
-								disableGutters
-								className='w-full h-full min-h-[50vh] flex flex-col items-center justify-center'
-								maxWidth='xl'>
-								{children}
+								className='flex flex-col gap-5 px-0 mx-auto overflow-hidden'
+								maxWidth='xl'
+								disableGutters>
+								<TopBar />
+
+								<Sidebar />
+								<Container
+									component='main'
+									disableGutters
+									className='w-full h-full min-h-[50vh] flex flex-col items-center justify-center'
+									maxWidth='xl'>
+									{children}
+								</Container>
+								<Footer />
 							</Container>
-							<Footer />
-						</Container>
+							<Modal />
+						</ModalProvider>
 					</SidebarProvider>
 				</ThemeProviderWrapper>
 			</body>
