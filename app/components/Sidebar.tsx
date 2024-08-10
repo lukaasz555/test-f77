@@ -10,7 +10,7 @@ export const Sidebar = () => {
 	const { isOpen, toggleSidebar } = useSidebar();
 
 	return (
-		<Drawer anchor='left' open={true} onClose={() => toggleSidebar()}>
+		<Drawer anchor='left' open={isOpen} onClose={() => toggleSidebar()}>
 			<nav className='h-full my-10 px-2'>
 				{categoriesStore
 					.rootCategories()
