@@ -4,21 +4,9 @@ import AppBar from '@mui/material/AppBar';
 import { Menu } from './Menu';
 import { CartButton } from './CartButton';
 import { UserButton } from './UserButton';
-import { MobileMenu } from './MobileMenu';
-import { useEffect, useState } from 'react';
-import { Category } from '../data/mockCategories';
-import { useCategoriesStore } from '@/lib/store';
+import { Hamburger } from './Hamburger';
 
 export const TopBar = () => {
-	const [rootCategories, setRootCategories] = useState<Category[]>([]);
-	const categoriesStore = useCategoriesStore();
-
-	useEffect(() => {
-		const rootCategories = categoriesStore.rootCategories();
-		console.log('rootCategories', rootCategories);
-		setRootCategories(rootCategories);
-	}, [categoriesStore]);
-
 	return (
 		<AppBar position='static' color='primary' style={{ height: '100px' }}>
 			<Container
@@ -26,8 +14,8 @@ export const TopBar = () => {
 				className='flex items-center justify-between h-full px-4'>
 				<Toolbar disableGutters className='flex justify-between w-full'>
 					<aside style={{ width: '30%' }}>
-						<Menu categories={rootCategories} />
-						<MobileMenu categories={rootCategories} />
+						<Menu />
+						<Hamburger />
 					</aside>
 
 					<div className='flex justify-center' style={{ width: '40%' }}>

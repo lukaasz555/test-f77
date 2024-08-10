@@ -1,21 +1,22 @@
 import { MenuItem } from './MenuItem';
-import { Category } from '../data/mockCategories';
+import { useCategoriesStore } from '@/lib/categories.store';
 
-type Props = {
-	categories: Category[];
-};
+export const Menu = () => {
+	const categoriesStore = useCategoriesStore();
 
-export const Menu = ({ categories }: Props) => {
 	return (
 		<div className='hidden lg:flex'>
-			{categories.map(({ id, name, subcategoriesIds }) => (
-				<MenuItem
-					key={id}
-					id={id}
-					name={name}
-					subcategoriesIds={subcategoriesIds}
-				/>
-			))}
+			{categoriesStore
+				.rootCategories()
+				.map(({ id, name, subcategoriesIds }) => (
+					<MenuItem
+						key={id}
+						id={id}
+						name={name}
+						isMobile={false}
+						subcategoriesIds={subcategoriesIds}
+					/>
+				))}
 		</div>
 	);
 };
