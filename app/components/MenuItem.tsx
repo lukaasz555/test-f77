@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { mockCategories } from '../data/mockCategories';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import clsx from 'clsx';
+import DropdownItem from './DropdownItem';
 
 type Props = {
 	id: number;
@@ -44,7 +45,7 @@ export const MenuItem = ({
 				className='mx-4 px-0 cursor-pointer mb-3'
 				style={{ width: '200px' }}
 				onClick={onCategoryClick}>
-				<div className='flex items-center justify-start'>
+				<div className='flex items-center justify-start translate-x-0 hover:translate-x-1 transition-transform duration-150'>
 					<p className='uppercase tracking-wide text-black'>{name}</p>
 					{subcategories.length > 0 && (
 						<div className='ml-'>
@@ -70,7 +71,7 @@ export const MenuItem = ({
 							key={c.id}
 							className='px-3 py-1 transition-bg transition-colors duration-300 cursor-pointer'
 							onClick={() => onSubcategoryClick(c.id)}>
-							<p className='text-sm uppercase tracking-wide font-heading hover:text-primary'>
+							<p className='text-sm font-normal uppercase tracking-wide font-heading hover:text-primary'>
 								{c.name}
 							</p>
 						</div>
@@ -105,15 +106,12 @@ export const MenuItem = ({
 						? 'opacity-100 translate-y-0'
 						: 'opacity-0 translate-y-2 pointer-events-none'
 				)}>
-				{subcategories.map((c) => (
-					<div
-						key={c.id}
-						className='hover:bg-lightGray px-3 py-1 transition-bg transition-colors duration-300'
-						onClick={() => onSubcategoryClick(c.id)}>
-						<p className='text-sm uppercase tracking-wide font-heading'>
-							{c.name}
-						</p>
-					</div>
+				{subcategories.map(({ id, name }) => (
+					<DropdownItem
+						key={id}
+						text={name}
+						onClick={() => onSubcategoryClick(id)}
+					/>
 				))}
 			</div>
 		</div>

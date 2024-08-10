@@ -21,10 +21,14 @@ const handleLogin = async (): Promise<void> => {
 	});
 };
 
-export const useUserStore = create<Store>((set, get) => ({
-	isLoggedIn: false,
+const baseState = (): Store => ({
+	isLoggedIn: true,
 	userData: null,
 	jwtToken: '',
+});
+
+export const useUserStore = create<Store>((set, get) => ({
+	...baseState(),
 
 	login: async (userData: UserData, jwtToken: string) => {
 		await handleLogin();
