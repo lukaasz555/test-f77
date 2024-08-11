@@ -9,6 +9,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 	height?: number;
 	animateOnHover?: boolean;
 	showArrowRight?: boolean;
+	secondary?: boolean;
 }
 
 export const Button = (props: Props) => {
@@ -20,6 +21,7 @@ export const Button = (props: Props) => {
 		height = 40,
 		animateOnHover = false,
 		showArrowRight = false,
+		secondary = false,
 		...rest
 	} = props;
 
@@ -38,7 +40,15 @@ export const Button = (props: Props) => {
 				className={clsx(
 					'bg-primary group relative px-8 py-2 text-center uppercase text-2sm font-medium text-background tracking-wider transition-all duration-300 border-2 border-primary',
 					animateOnHover ? 'hover:bg-background hover:text-header' : '',
-					showArrowRight ? 'flex items-center' : ''
+					showArrowRight ? 'flex items-center' : '',
+					secondary ? 'bg-transparent text-black border-black' : '',
+					secondary && animateOnHover ? 'hover:bg-lightGray' : '',
+					props.disabled
+						? ' bg-lightGray border-lightGray text-text cursor-not-allowed'
+						: '',
+					props.disabled && animateOnHover
+						? 'hover:bg-lightGray hover:border-lightGray hover:text-text'
+						: ''
 				)}
 				disabled={rest.disabled}
 				style={{ height: `${height}px` }}

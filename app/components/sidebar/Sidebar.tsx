@@ -13,7 +13,10 @@ export const Sidebar = () => {
 		<Drawer anchor='left' open={isOpen} onClose={() => toggleSidebar()}>
 			<div className='flex justify-end mt-2'>
 				<button className='p-1' onClick={toggleSidebar}>
-					<IoClose size={28} />
+					<IoClose
+						size={28}
+						className='rotate-0 hover:rotate-180 transition-transform duration-200'
+					/>
 				</button>
 			</div>
 			<nav className='h-full my-5 px-2'>

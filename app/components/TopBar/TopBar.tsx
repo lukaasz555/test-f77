@@ -2,9 +2,9 @@
 import AppBar from '@mui/material/AppBar';
 import { Container, Toolbar } from '@mui/material';
 import { Menu } from './Menu';
-import { CartButton } from './shared/CartButton';
-import { UserButton } from './UserButton';
+import { CartButton } from './CartButton';
 import { Hamburger } from './Hamburger';
+import { UserButton } from './UserButton';
 
 export const TopBar = () => {
 	return (
