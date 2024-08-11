@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 import { Nunito, Poppins } from 'next/font/google';
-import { TopBar } from './components/TopBar';
 import { Container } from '@mui/material';
-import { Footer } from './components/Footer';
+import { Footer } from './components/footer/Footer';
 import { ThemeProviderWrapper } from './theme/ThemeProviderWrapper';
 import { SidebarProvider, useSidebar } from '@/contexts/SidebarContext';
-import { Sidebar } from './components/Sidebar';
-import './globals.css';
+import { Sidebar } from './components/sidebar/Sidebar';
 import { notFound } from 'next/navigation';
 import { ModalProvider } from '@/contexts/ModalContext';
-import Modal from './components/Modal';
+import Modal from './components/shared/Modal';
+import { TopBar } from './components/TopBar/TopBar';
+import './globals.css';
 
 const poppins = Poppins({
 	weight: ['400', '500', '600', '700', '800'],

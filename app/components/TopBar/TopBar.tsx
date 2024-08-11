@@ -1,8 +1,8 @@
 'use client';
-import { Container, Toolbar } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
+import { Container, Toolbar } from '@mui/material';
 import { Menu } from './Menu';
-import { CartButton } from './CartButton';
+import { CartButton } from './shared/CartButton';
 import { UserButton } from './UserButton';
 import { Hamburger } from './Hamburger';
 

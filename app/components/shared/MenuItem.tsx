@@ -1,10 +1,10 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { mockCategories } from '../data/mockCategories';
+import { mockCategories } from '../../data/mockCategories';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
-import clsx from 'clsx';
 import DropdownItem from './DropdownItem';
+import clsx from 'clsx';
 
 type Props = {
 	id: number;

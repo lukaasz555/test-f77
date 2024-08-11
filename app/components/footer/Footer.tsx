@@ -1,7 +1,7 @@
-import { FooterNewsletter } from './FooterNewsletter';
-import { FooterInformation } from './FooterInformation';
 import { FooterCustomerSupport } from './FooterCustomerSupport';
 import { FooterDescription } from './FooterDescription';
+import { FooterInformation } from './FooterInformation';
+import { FooterNewsletter } from './FooterNewsletter';
 
 export const Footer = () => {
 	return (

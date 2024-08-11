@@ -1,5 +1,5 @@
-import { MenuItem } from './MenuItem';
 import { useCategoriesStore } from '@/lib/categories.store';
+import { MenuItem } from '../shared/MenuItem';
 
 export const Menu = () => {
 	const categoriesStore = useCategoriesStore();

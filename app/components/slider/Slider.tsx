@@ -3,7 +3,7 @@ import slider1 from '@/public/slider1.avif';
 import slider3 from '@/public/slider3.avif';
 import slider4 from '@/public/slider4.avif';
 import slider5 from '@/public/slider5.avif';
-import { Button } from './Button';
+import { Button } from '../shared/Button';
 
 // * it's just a dummy slider component - no idea for this
 export const Slider = () => {

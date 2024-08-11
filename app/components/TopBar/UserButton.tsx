@@ -4,7 +4,7 @@ import { useUserStore } from '@/lib/user.store';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
 import clsx from 'clsx';
-import DropdownItem from './DropdownItem';
+import DropdownItem from '../shared/DropdownItem';
 
 export const UserButton = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -25,16 +25,16 @@ export const UserButton = () => {
 	return (
 		<div>
 			<Button
-				id='demo-positioned-button'
-				aria-controls={open ? 'demo-positioned-menu' : undefined}
+				id='user-menu-button'
+				aria-controls={open ? 'user-menu-menu' : undefined}
 				aria-haspopup='true'
 				aria-expanded={open ? 'true' : undefined}
 				onClick={handleClick}>
 				<FaUser size={24} color='white' onClick={() => setIsOpen(!isOpen)} />
 			</Button>
 			<Menu
-				id='demo-positioned-menu'
-				aria-labelledby='demo-positioned-button'
+				id='user-menu-menu'
+				aria-labelledby='user-menu-button'
 				anchorEl={anchorEl}
 				open={open}
 				onClose={handleClose}

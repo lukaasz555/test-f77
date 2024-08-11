@@ -1,9 +1,9 @@
 'use client';
-
 import Drawer from '@mui/material/Drawer';
 import { useSidebar } from '@/contexts/SidebarContext';
 import { useCategoriesStore } from '@/lib/categories.store';
-import { MenuItem } from './MenuItem';
+import { MenuItem } from '../shared/MenuItem';
+import { IoClose } from 'react-icons/io5';
 
 export const Sidebar = () => {
 	const categoriesStore = useCategoriesStore();
@@ -11,7 +11,12 @@ export const Sidebar = () => {
 
 	return (
 		<Drawer anchor='left' open={isOpen} onClose={() => toggleSidebar()}>
-			<nav className='h-full my-10 px-2'>
+			<div className='flex justify-end mt-2'>
+				<button className='p-1' onClick={toggleSidebar}>
+					<IoClose size={28} />
+				</button>
+			</div>
+			<nav className='h-full my-5 px-2'>
 				{categoriesStore
 					.rootCategories()
 					.map(({ id, name, subcategoriesIds }) => (

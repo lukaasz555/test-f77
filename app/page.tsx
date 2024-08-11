@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-import { Slider } from './components/Slider';
+import { Slider } from './components/slider/Slider';
 import { useCategoriesStore } from '@/lib/categories.store';
 
 export default function Page() {
