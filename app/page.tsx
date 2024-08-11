@@ -1,18 +1,6 @@
-'use client';
-import { useEffect } from 'react';
 import { Slider } from './components/slider/Slider';
-import { useCategoriesStore } from '@/lib/categories.store';
 
-export default function Page() {
-	const categoriesStore = useCategoriesStore();
-
-	useEffect(() => {
-		const loadInitData = async () => {
-			await categoriesStore.loadCategories();
-		};
-		loadInitData();
-	}, []);
-
+export async function Page() {
 	return (
 		<div className='flex flex-col gap-10 w-full'>
 			<Slider />
@@ -24,3 +12,5 @@ export default function Page() {
 		</div>
 	);
 }
+
+export default Page;

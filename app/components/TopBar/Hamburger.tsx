@@ -1,3 +1,4 @@
+'use client';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useSidebar } from '@/contexts/SidebarContext';
 

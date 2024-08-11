@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import { useUserStore } from '@/lib/user.store';

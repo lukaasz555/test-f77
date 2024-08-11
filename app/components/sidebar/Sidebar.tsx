@@ -1,13 +1,17 @@
 'use client';
 import Drawer from '@mui/material/Drawer';
 import { useSidebar } from '@/contexts/SidebarContext';
-import { useCategoriesStore } from '@/lib/categories.store';
 import { MenuItem } from '../shared/MenuItem';
 import { IoClose } from 'react-icons/io5';
+import { Category } from '@/app/data/mockCategories';
 
-export const Sidebar = () => {
-	const categoriesStore = useCategoriesStore();
+type Props = {
+	categories: Category[];
+};
+
+export const Sidebar = ({ categories }: Props) => {
 	const { isOpen, toggleSidebar } = useSidebar();
+	const rootCategories = categories.filter((cat) => !cat.parentCategoryId);
 
 	return (
 		<Drawer anchor='left' open={isOpen} onClose={() => toggleSidebar()}>
@@ -20,17 +24,15 @@ export const Sidebar = () => {
 				</button>
 			</div>
 			<nav className='h-full my-5 px-2'>
-				{categoriesStore
-					.rootCategories()
-					.map(({ id, name, subcategoriesIds }) => (
-						<MenuItem
-							key={id}
-							id={id}
-							name={name}
-							isMobile={true}
-							subcategoriesIds={subcategoriesIds}
-						/>
-					))}
+				{rootCategories.map(({ id, name, subcategoriesIds }) => (
+					<MenuItem
+						key={id}
+						id={id}
+						name={name}
+						isMobile={true}
+						subcategoriesIds={subcategoriesIds}
+					/>
+				))}
 			</nav>
 		</Drawer>
 	);

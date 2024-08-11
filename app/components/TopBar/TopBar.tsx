@@ -1,12 +1,16 @@
-'use client';
 import AppBar from '@mui/material/AppBar';
 import { Container, Toolbar } from '@mui/material';
 import { Menu } from './Menu';
 import { CartButton } from './CartButton';
 import { Hamburger } from './Hamburger';
 import { UserButton } from './UserButton';
+import { Category } from '@/app/data/mockCategories';
 
-export const TopBar = () => {
+type Props = {
+	categories: Category[];
+};
+
+export const TopBar = ({ categories }: Props) => {
 	return (
 		<AppBar position='static' color='primary' style={{ height: '100px' }}>
 			<Container
@@ -14,7 +18,7 @@ export const TopBar = () => {
 				className='flex items-center justify-between h-full px-4'>
 				<Toolbar disableGutters className='flex justify-between w-full'>
 					<aside style={{ width: '30%' }}>
-						<Menu />
+						<Menu categories={categories} />
 						<Hamburger />
 					</aside>
 

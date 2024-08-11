@@ -10,6 +10,7 @@ import { ModalProvider } from '@/contexts/ModalContext';
 import Modal from './components/shared/Modal';
 import { TopBar } from './components/TopBar/TopBar';
 import './globals.css';
+import { Category, mockCategories } from './data/mockCategories';
 
 const poppins = Poppins({
 	weight: ['400', '500', '600', '700', '800'],
@@ -26,7 +27,15 @@ export const metadata: Metadata = {
 	description: '77store',
 };
 
-export default function RootLayout({
+async function fetchCategories(): Promise<Category[]> {
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve(mockCategories);
+		}, 777);
+	});
+}
+
+export default async function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
@@ -34,6 +43,8 @@ export default function RootLayout({
 	if (!metadata.description) {
 		throw notFound();
 	}
+
+	const categories = await fetchCategories();
 
 	return (
 		<html lang='en'>
@@ -52,9 +63,8 @@ export default function RootLayout({
 								className='flex flex-col gap-5 px-0 mx-auto overflow-hidden'
 								maxWidth='xl'
 								disableGutters>
-								<TopBar />
-
-								<Sidebar />
+								<TopBar categories={categories} />
+								<Sidebar categories={categories} />
 								<Container
 									component='main'
 									disableGutters
