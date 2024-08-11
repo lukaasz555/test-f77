@@ -1,21 +1,39 @@
-'use client';
-import { Container, Toolbar, Typography } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
+import { Container, Toolbar } from '@mui/material';
+import { Menu } from './Menu';
+import { CartButton } from './CartButton';
+import { Hamburger } from './Hamburger';
+import { UserButton } from './UserButton';
+import { Category } from '@/app/data/mockCategories';
 
-export const TopBar = () => {
+type Props = {
+	categories: Category[];
+};
+
+export const TopBar = ({ categories }: Props) => {
 	return (
-		<AppBar
-			position='static'
-			className='rounded-none  xl:rounded-bl-xl xl:rounded-br-xl'>
-			<Container style={{ paddingInline: '0' }} maxWidth='xl'>
-				<Toolbar disableGutters className='flex justify-between'>
-					<Box className='flex'>
-						<Typography variant='h1'>77Store</Typography>
-						<Box>nav?</Box>
-					</Box>
+		<AppBar position='static' color='primary' style={{ height: '100px' }}>
+			<Container
+				maxWidth='xl'
+				className='flex items-center justify-between h-full px-4'>
+				<Toolbar disableGutters className='flex justify-between w-full'>
+					<aside style={{ width: '30%' }}>
+						<Menu categories={categories} />
+						<Hamburger />
+					</aside>
 
-					<Box>Account/Login</Box>
+					<div className='flex justify-center' style={{ width: '40%' }}>
+						<h1 className='text-background'>
+							<a href='/'>77store</a>
+						</h1>
+					</div>
+
+					<aside
+						className='flex items-center justify-end gap-5'
+						style={{ width: '30%' }}>
+						<UserButton />
+						<CartButton />
+					</aside>
 				</Toolbar>
 			</Container>
 		</AppBar>
