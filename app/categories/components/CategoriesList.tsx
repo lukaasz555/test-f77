@@ -8,9 +8,15 @@ function CategoriesList() {
 	const categoriesStore = useCategoriesStore();
 	return (
 		<Grid container spacing={4} className='flex justify-center'>
-			{categoriesStore.rootCategories().map(({ id, name }) => (
-				<Grid key={id} item xs={12} sm={6} md={3}>
-					<CategoryCard id={id} name={name} />
+			{categoriesStore.rootCategories().map(({ id, name, imgSrc }) => (
+				<Grid
+					key={id}
+					item
+					xs={12}
+					sm={6}
+					md={4}
+					className='flex justify-center'>
+					<CategoryCard id={id} name={name} imgSrc={imgSrc} />
 				</Grid>
 			))}
 		</Grid>
