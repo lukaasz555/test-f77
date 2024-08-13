@@ -1,4 +1,3 @@
-// import { useCategoriesStore } from '@/lib/categories.store';
 import { MenuItem } from '../shared/MenuItem';
 import { Category } from '@/app/data/mockCategories';
 
@@ -7,8 +6,6 @@ type Props = {
 };
 
 export const Menu = ({ categories }: Props) => {
-	// const categoriesStore = useCategoriesStore();
-
 	const rootCategories = categories.filter((cat) => !cat.parentCategoryId);
 
 	return (

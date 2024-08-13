@@ -3,6 +3,7 @@ export interface Category {
 	name: string;
 	parentCategoryId: number | null;
 	subcategoriesIds: number[];
+	imgSrc?: string;
 }
 
 export const mockCategories: Category[] = [
@@ -12,6 +13,8 @@ export const mockCategories: Category[] = [
 		name: 'man',
 		parentCategoryId: null,
 		subcategoriesIds: [12, 14],
+		imgSrc:
+			'https://images.unsplash.com/photo-1549037173-e3b717902c57?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 	},
 	{
 		id: 12,
@@ -44,6 +47,8 @@ export const mockCategories: Category[] = [
 		name: 'woman',
 		parentCategoryId: null,
 		subcategoriesIds: [22],
+		imgSrc:
+			'https://images.unsplash.com/photo-1591338459467-bd36100b07c2?q=80&w=2704&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 	},
 	{
 		id: 22,
@@ -69,5 +74,7 @@ export const mockCategories: Category[] = [
 		name: 'kids',
 		parentCategoryId: null,
 		subcategoriesIds: [],
+		imgSrc:
+			'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?q=80&w=1944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 	},
 ];
