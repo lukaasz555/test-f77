@@ -32,7 +32,7 @@ export const TopBar = ({ categories }: Props) => {
 
 					<div className='flex justify-center' style={{ width: '40%' }}>
 						<h1 className='text-background'>
-							<a href='/'>77store</a>
+							<a href='/'>77store TEST</a>
 						</h1>
 					</div>
 
