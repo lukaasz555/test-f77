@@ -26,9 +26,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Run app
-        run: npm run start
-
       - name: Deploy to Vercel
         if: ${{ github.event.inputs.deploy-vercel }}
         run: npx vercel --prod
