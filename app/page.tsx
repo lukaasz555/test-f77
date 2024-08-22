@@ -1,6 +1,6 @@
 import { Slider } from './components/slider/Slider';
 
-export async function Page() {
+async function Page() {
 	return (
 		<div className='flex flex-col gap-10 w-full'>
 			<Slider />
