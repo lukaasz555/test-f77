@@ -17,6 +17,7 @@ on:
 jobs:
   Vercel_deploy:
     runs-on: ubuntu-latest
+    environment: Production
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
