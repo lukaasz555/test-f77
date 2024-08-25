@@ -4,6 +4,14 @@ description: Setup project and build for deployment
 runs:
   using: 'composite'
   steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Configure node
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: '.nvmrc'
+
     - name: Install dependencies
       run: npm ci
 
