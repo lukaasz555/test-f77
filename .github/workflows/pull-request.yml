@@ -16,6 +16,9 @@ jobs:
       - name: Log workflow event
         run: echo "PULL REQUEST EVENT TRIGGERED"
 
+      - name: Setup project
+        uses: ./.github/actions/setup-project
+
       - name: Install Vercel CLI
         run: npm install --global vercel@canary
 
