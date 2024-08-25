@@ -1,0 +1,17 @@
+name: Setup project
+description: Setup project and build for deployment
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install dependencies
+      run: npm ci
+      shell: bash
+
+    - name: Lint
+      run: npm run lint
+      shell: bash
+
+    - name: Build app
+      run: npm run build
+      shell: bash
