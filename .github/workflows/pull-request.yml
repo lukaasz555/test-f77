@@ -16,6 +16,14 @@ jobs:
       - name: Log workflow event
         run: echo "PULL REQUEST EVENT TRIGGERED"
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
       - name: Setup project
         uses: ./.github/actions/setup-project
 
