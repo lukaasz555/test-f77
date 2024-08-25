@@ -1,12 +1,9 @@
-name: Deploy to Vercel
+name: Deploy
 
 on:
-  workflow_dispatch:
-    inputs:
-      deploy-vercel:
-        description: 'Enable Vercel deployment'
-        type: boolean
-        default: true
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -14,7 +11,6 @@ jobs:
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-    environment: Production
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
